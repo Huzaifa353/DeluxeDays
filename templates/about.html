@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="about">
+    <div class="imageBG">
+        <div class="text">About Us</div>
+    </div>
+
+    <section class="info mx-auto container row justify-content-between">
+        <div class="col col-md-6 d-flex justify-content-center flex-column">
+            <div class="mb-md-4 text-center text-md-left">
+                <h3>Our Mission</h3>
+                <p> Our Mission at Deluxe Days is to create positive social and environmental
+                    impact through our business operations. We are committed to addressing
+                    societal challenges and promoting sustainable solutions in which you can become host and
+                    earn, while generating economic values for our stakeholders .</p>
+            </div>
+        </div>
+        <div class="col col-md-6 d-flex justify-content-center align-items-center">
+            <img src="{% static '/img/image.png' %}" class="aboutus_img">
+        </div>
+    </section>
+
+    <section class="info mx-auto container row justify-content-between">
+        <div class="col col-md-6 d-flex justify-content-center align-items-center">
+            <img src="{% static '/img/image1.png' %}" class="aboutus_img">
+        </div>
+        <div class="col col-md-6 d-flex justify-content-center flex-column">
+            <div class="mb-md-4 text-center text-md-left">
+                <h3>Our Vision</h3>
+                <p> Our Vision is to be leading social enterprise company that transforms
+                    communities and protects the environment through sustainable and innovative
+                    business practices. We strive to inspire others to join us in creating a more
+                    equitable and sustainable world.</p>    
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="customers py-4 px-5">
+            <h1>Thankyou Board</h1>
+            <p>Reviews from Our Valuable Investors and Strategic Partners</p>
+            <div class="slide mt-4 mb-2">
+                <img src="{% static '/img/image2.png' %}" style="height:100px;width:100px;">
+                <div>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+                <p>Courtney Henry</p>
+                <p>
+                    “I wanted to take a moment to express my sincere gratitude for your Contribution .
+                    Your hard work , dedication , and expertise have made a significant impact.”
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="features text-center mt-4">
+        <div class="container my-5 py-4">
+            <h4>Why Choose Us?</h4>
+            <p class="mb-4">These popular destinations have a lot to offer</p>
+            <div class="row">
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/airplane-mode-on.png" alt="airplane-mode-on"/>
+                    <h5>
+                        Travel
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/city-buildings.png" alt="city-buildings"/>
+                    <h5>
+                        City Tour
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/crowd.png" alt="crowd"/>
+                    <h5>
+                        Social Community
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/ok.png" alt="ok"/>
+                    <h5>
+                        Best price guarantee
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/tear-off-calendar.png" alt="tear-off-calendar"/>
+                    <h5>
+                        Easy Booking
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+                <div class="col-md-4 my-4 px-4">
+                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/headset.png" alt="headset"/>
+                    <h5>
+                        Customer Service 24h
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form_portion mb-2">
+            <div class="row">
+                <div class="col col-12 col-lg-6 col-md-3">
+                </div>
+                <div class="col col-12 col-lg-6 col-md-9">
+                    <div class="form-container">
+                        <h2>Get in Touch with Us</h2>
+                        <form>
+                            <div class="row mt-3">
+                                <div class="form-group col-md-6">
+                                    <label for="name">First Name</label>
+                                    <input type="text" class="form-control mt-1" id="name"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="name">LastName</label>
+                                    <input type="text" class="form-control mt-1" id="name"
+                                        placeholder="Enter your name">
+                                </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control mt-1" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control mt-1" id="phone" name="phone"
+                                    placeholder="Input your Phone Number in Here" pattern="[0-9]{3}-[0-9]">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="message">Message</label>
+                                <textarea class="form-control mt-1" id="message" rows="5"
+                                    placeholder="Write a message"></textarea>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="form_button">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="black-strip my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-2 text-center">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div class="col-2 text-center">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <div class="col-2 text-center">
+                    <i class="fa fa-instagram"></i>
+                </div>
+                <div class="col-2 text-center">
+                    <i class="fa fa-linkedin"></i>
+                </div>
+                <div class="col-2 text-center">
+                    <i class="fa fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="members mt-5">
+        <div class="container">
+            <h3>Team Members</h3>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <img src="{% static '/img/Jacob Robbert.png' %}">
+                    <h5>
+                        Jacob Robbert
+                    </h5>
+                    <p>Travel Cordinator</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Mike Robbert.png' %}">
+                    <h5>
+                        Mike Robbert
+                    </h5>
+                    <p>Customer Support</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Mike Robert.png' %}">
+                    <h5>
+                        Mike Robbert
+                    </h5>
+                    <p>Customer Support</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Maria Williams.png' %}">
+                    <h5>
+                        Maria Williams
+                    </h5>
+                    <p>Event Manager</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <img src="{% static '/img/Marry Henry.png' %}">
+                    <h5>
+                        Marry Henry
+                    </h5>
+                    <p>Travel Cordinator</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Sussy Wahya.png' %}">
+                    <h5>
+                        Sussy Wahiya
+                    </h5>
+                    <p>Customer Support</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Susy Wahya.png' %}">
+                    <h5>
+                        Sussy Wahiya
+                    </h5>
+                    <p>Customer Support</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="{% static '/img/Blake Robbert.png' %}">
+                    <h5>
+                        Blake Robbert
+                    </h5>
+                    <p>Event Manager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        <h3 class="mt-4">Deluxe Days</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
+                            venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent
+                            elementum facilisis leo, vel</p>
+                    </div>
+                </div>
+                <div class="footer_links col-md-4">
+                    <h5 class="mt-4">Series</h5>
+                    <div class="mt-3">
+                        <a>
+                            About Us
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <a>
+                            Blog & Activities
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <a>
+                            Terms and Conditions
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <a>
+                            Policy
+                        </a> 
+                    </div>
+                </div>
+                <div class="footer_links col-md-4">
+                    <h5 class="mt-4">Contact</h5>
+                    <div class="mt-3"><a>Address: Jl.Codelaras No.205A</a></div>
+                    <div class="mt-2">
+                        <a>Kediri, Pare AG17</a>
+                    </div>
+                    <div class="mt-2">
+                        <a>Phone: 123 456 7890</a>
+                    </div> 
+                    <div class="mt-2">
+                        <a>Email: example@gmail.com</a>
+                    </div> 
+                    <div class="mt-2">
+                        <a>Maps: Denmark</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer_contact mt-4">Nail</h5>
+                    <i class="icon_text fa fa-instagram"></i>
+                    <i class="icon_text fa fa-facebook"></i>
+                    <i class="icon_text fa fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            All Rights are Reserved to Deluxe Days 2023
+        </div>
+    </footer>
+
+    <script src="img/https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</body>
+
+</html>
