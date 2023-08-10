@@ -1,37 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load static  %}
 
-    <title>Blogs</title>
+{% block title %}BLOG{% endblock %}
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+{% block content %}
 
-    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body>
-    <div class="image">
-        <div class="inside_image">Blogs</div>
-    </div>
+    {% include 'header.html' with title='Blogs' %}
 
     <section class="blog mx-auto my-5 container">
         <h3 class="mb-4 text-center">What they say about us</h3>
@@ -39,133 +14,61 @@
 
             <div class="col col-md-4 p-3">
                 <div class="review-box p-4">
-                    <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                    <h5>Integer Maecenas Eget Viverra. </h5>
-                    <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                    <span>21 June 2022 - 2 minute read</span>
-                </div>
-            </div>
-
-            <div class="col col-md-4 p-3">
-                <div class="review-box p-4">
-                    <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                    <h5>Integer Maecenas Eget Viverra. </h5>
-                    <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                    <span>21 June 2022 - 2 minute read</span>
-                </div>
-            </div>
-
-            <div class="col col-md-4 p-3">
-                <div class="review-box p-4">
-                    <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                    <h5>Integer Maecenas Eget Viverra. </h5>
-                    <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                    <span>21 June 2022 - 2 minute read</span>
-                </div>
-            </div>
-
-            <div class="col col-md-4 p-3">
-                <div class="review-box p-4">
-                    <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                    <h5>Integer Maecenas Eget Viverra. </h5>
-                    <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                    <span>21 June 2022 - 2 minute read</span>
-                </div>
-            </div>
-
-            <div class="col col-md-4 p-3">
-                <div class="review-box p-4">
-                    <div class="blog_profile">
-                        <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                        <h5>Integer Maecenas Eget Viverra. </h5>
-                        <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                        <span>21 June 2022 - 2 minute read</span>
-                    </div>
+                    <img src="https://img.freepik.com/free-photo/wide-shot-houses-buildings-city-copenhagen-denmark_181624-1921.jpg" alt="Denmark Travel Blog Image 1">
+                    <h5>Enchanting Copenhagen: A Fairy Tale City</h5>
+                    <p>Explore the charming streets, historic landmarks, and vibrant culture of Copenhagen, Denmark's capital.</p>
+                    <span>10 August 2023 - 6 minute read</span>
                 </div>
             </div>
             
             <div class="col col-md-4 p-3">
                 <div class="review-box p-4">
-                    <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-                    <h5>Integer Maecenas Eget Viverra. </h5>
-                    <p>Aenean eleifend ante maecenas pulvinar montes lorem et pede.</p>
-                    <span>21 June 2022 - 2 minute read</span>
+                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/86/f9.jpg" alt="Denmark Travel Blog Image 2">
+                    <h5>Nyhavn: Captivating Colors of Copenhagen</h5>
+                    <p>Discover the picturesque waterfront of Nyhavn, known for its iconic colorful houses and vibrant atmosphere.</p>
+                    <span>15 July 2023 - 5 minute read</span>
                 </div>
             </div>
+            
+            <div class="col col-md-4 p-3">
+                <div class="review-box p-4">
+                    <img src="https://img.freepik.com/premium-photo/egeskov-slot-denmark_155769-813.jpg" alt="Denmark Travel Blog Image 3">
+                    <h5>Kronborg Castle: Shakespearean Elegance</h5>
+                    <p>Step into the world of Hamlet at Kronborg Castle, a UNESCO-listed gem with a rich history and stunning architecture.</p>
+                    <span>5 September 2023 - 7 minute read</span>
+                </div>
+            </div>
+            
+            <div class="col col-md-4 p-3">
+                <div class="review-box p-4">
+                    <img src="https://www.vikingeskibsmuseet.dk/frontend/_processed_/3/3/csm_Vikingeskibshallen_Werner_Karrasch24x36_f941333591.jpg" alt="Denmark Travel Blog Image 4">
+                    <h5>Viking Ship Museum: Sailing Through Time</h5>
+                    <p>Immerse yourself in Denmark's Viking heritage at the Viking Ship Museum in Roskilde, home to ancient ships and artifacts.</p>
+                    <span>20 August 2023 - 6 minute read</span>
+                </div>
+            </div>
+            
+            <div class="col col-md-4 p-3">
+                <div class="review-box p-4">
+                    <img src="https://www.opdagdanmark.dk/wp-content/uploads/2019/08/m%C3%B8ns-klint-pixabay3.jpg" alt="Denmark Travel Blog Image 5">
+                    <h5>Moens Klint: Majestic Cliffs by the Baltic Sea</h5>
+                    <p>Embark on a scenic adventure to Moens Klint and witness the dramatic white chalk cliffs overlooking the Baltic Sea.</p>
+                    <span>8 October 2023 - 5 minute read</span>
+                </div>
+            </div>
+            
+            <div class="col col-md-4 p-3">
+                <div class="review-box p-4">
+                    <img src="https://www.legoland.dk/media/rksjmvkc/148-legoland__k1a3129_final_1920x1080.jpg" alt="Denmark Travel Blog Image 6">
+                    <h5>Legoland Billund: Family Fun in Denmark</h5>
+                    <p>Experience the magic of Legoland Billund, a thrilling amusement park filled with imaginative Lego creations and attractions.</p>
+                    <span>27 September 2023 - 7 minute read</span>
+                </div>
+            </div>                       
 
         </div>
 
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div>
-                        <h3 class="mt-4">Deluxe Days</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
-                            venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent
-                            elementum facilisis leo, vel</p>
-                    </div>
-                </div>
-                <div class="footer_links col-md-4">
-                    <h5 class="mt-4">Series</h5>
-                    <div class="mt-3">
-                        <a>
-                            About Us
-                        </a>
-                    </div>
-                    <div class="mt-2">
-                        <a>
-                            Blog & Activities
-                        </a>
-                    </div>
-                    <div class="mt-2">
-                        <a>
-                            Terms and Conditions
-                        </a>
-                    </div>
-                    <div class="mt-2">
-                        <a>
-                            Policy
-                        </a>
-                    </div>
-                </div>
-                <div class="footer_links col-md-4">
-                    <h5 class="mt-4">Contact</h5>
-                    <div class="mt-3"><a>Address: Jl.Codelaras No.205A</a></div>
-                    <div class="mt-2">
-                        <a>Kediri, Pare AG17</a>
-                    </div>
-                    <div class="mt-2">
-                        <a>Phone: 123 456 7890</a>
-                    </div>
-                    <div class="mt-2">
-                        <a>Email: example@gmail.com</a>
-                    </div>
-                    <div class="mt-2">
-                        <a>Maps: Denmark</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="footer_contact mt-4">Nail</h5>
-                    <i class="icon_text fa fa-instagram"></i>
-                    <i class="icon_text fa fa-facebook"></i>
-                    <i class="icon_text fa fa-twitter"></i>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            All Rights are Reserved to Deluxe Days 2023
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-</body>
-
-
-</html>
+{% endblock %}
