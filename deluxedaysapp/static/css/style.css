@@ -320,7 +320,6 @@ header .navbar-dark .navbar-toggler {
 .stats-bar .stat {
   padding: 33px 0;
   text-align: center;
-  max-width: 253px;
 }
 
 .stats-bar .stat:nth-child(even) {
