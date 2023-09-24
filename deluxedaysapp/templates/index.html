@@ -69,6 +69,10 @@
         {{ s1Description|safe }}
       </div>
     </section>
+
+    <section class="main-video">
+      <iframe src="https://www.youtube.com/embed/7PAwqItlUzI?cc_load_policy=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+    </section>
     
     <section class="contact-short container-fluid row">
       <h2>Booking your journey has never be easier</h2>
@@ -78,11 +82,11 @@
     
     <div class="tabs container row mx-auto my-5 text-center justify-content-center">
       <div class="col-6 col-md-4 px-0">
-        <h4 id="guestToggle" class="tab" onclick="switchToGuest()" active="true">Guest</h4>
+        <h4 id="guestToggle" class="tab" onclick="switchToGuest()" active="false">Guest</h4>
         <div class="tab-line"></div>
       </div>
       <div class="col-6 col-md-4 px-0">
-        <h4 id="hostToggle" class="tab" onclick="switchToHost()" active="false">Host</h4>
+        <h4 id="hostToggle" class="tab" onclick="switchToHost()" active="true">Host</h4>
       </div>
     </div>
 
@@ -120,6 +124,51 @@
 
             </div>
           </section>
+
+          {% if guestSliders %}
+            <section class="slider-section">
+              {{ guestSliderTitle|safe }}
+              <div id="guestSlides" class="carousel slide">
+                <ol class="carousel-indicators">
+                  {% for slider in guestSliders %}
+                  <li data-target="#guestSlides" data-slide-to="{{ forloop.counter0 }}" 
+                  {% if forloop.counter0 == 0 %} class="active" {% endif %}></li>
+                  {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                  {% for slider in guestSliders %}
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                      <div class="step row">
+                        <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
+                          <h4>{{ slider.title }}</h4>
+                          <h3>{{ forloop.counter }}</h3>
+                          {{ slider.description|safe }}
+                        </div>
+                        <img class="d-block col-md-6" src="{{ slider.image.url }}" alt="{{ slider.title }}">
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#guestSlides" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#guestSlides" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <div class="design-circles">
+                  <div class="circle-1"></div>
+                  <div class="circle-2"></div>
+                </div>
+              </div>
+            
+              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>            
+            </section>
+          {% endif %}
+
           {% for section in guestSections %}
           <section class="info mx-auto container row px-0">
             <div class="col col-md-6 p-4 d-flex justify-content-center flex-column 
@@ -142,92 +191,49 @@
         
         <section class="host container justify-content-center">
 
-          <section class="become-host">
-            <h2>Host Like a Pro in 5 Easy Steps</h2>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="step row">
-                    <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
-                      <h4>Download</h4>
-                      <h3>01</h3>
-                      <p class="mt-2">Download the Deluxe Days app From Play Store</p>
-                      <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {% if hostSliders %}
+            <section class="slider-section">
+              {{ hostSliderTitle|safe }}
+              <div id="hostSlides" class="carousel slide">
+                <ol class="carousel-indicators">
+                  {% for slider in hostSliders %}
+                  <li data-target="#hostSlides" data-slide-to="{{ forloop.counter0 }}" 
+                  {% if forloop.counter0 == 0 %} class="active" {% endif %}></li>
+                  {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                  {% for slider in hostSliders %}
+                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                      <div class="step row">
+                        <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
+                          <h4>{{ slider.title }}</h4>
+                          <h3>{{ forloop.counter }}</h3>
+                          {{ slider.description|safe }}
+                        </div>
+                        <img class="d-block col-md-6" src="{{ slider.image.url }}" alt="{{ slider.title }}">
+                      </div>
                     </div>
-                    <img class="d-block col-md-6" src="{% static 'img/guest_perks_screen.png' %}" alt="Image 1">
-                  </div>
+                  {% endfor %}
                 </div>
-                <div class="carousel-item">
-                  <div class="step row">
-                    <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
-                      <h4>Title</h4>
-                      <h3>02</h3>
-                      <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                    </div>
-                    <img class="d-block col-md-6" src="{% static 'img/guest_perks_screen.png' %}" alt="Image 1">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="step row">
-                    <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
-                      <h4>Title</h4>
-                      <h3>03</h3>
-                      <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <img class="d-block col-md-6" src="{% static 'img/guest_perks_screen.png' %}" alt="Image 1">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="step row">
-                    <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
-                      <h4>Title</h4>
-                      <h3>04</h3>
-                      <p class="mt-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                    <img class="d-block col-md-6" src="{% static 'img/guest_perks_screen.png' %}" alt="Image 1">
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="step row">
-                    <div class="d-flex flex-column justify-content-center mx-2 col-md-6">
-                      <h4>Title</h4>
-                      <h3>05</h3>
-                      <p class="mt-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                      </p>
-                    </div>
-                    <img class="d-block col-md-6" src="{% static 'img/guest_perks_screen.png' %}" alt="Image 1">
-                  </div>
+                <a class="carousel-control-prev" href="#hostSlides" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#hostSlides" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <div class="design-circles">
+                  <div class="circle-1"></div>
+                  <div class="circle-2"></div>
                 </div>
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-              <div class="design-circles">
-                <div class="circle-1"></div>
-                <div class="circle-2"></div>
-              </div>
-            </div>
-          
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>            
-          </section>
+            
+              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>            
+            </section>
+          {% endif %}
 
           <section class="host-collaboration">
             <h2 class="mb-2">Host Collaboration</h2>
@@ -259,97 +265,48 @@
             </div>
           </section>
           
+          {% for section in hostSections %}
           <section class="info mx-auto container row px-0">
-            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column">
+            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column 
+            {% if forloop.counter|divisibleby:2 %} order-1 order-md-2 {% endif %}">
               <div class="mb-md-5 text-center text-md-left">
-                <h3>Host Benefits</h3>
-                <p>Our Platform provides guest with a one-stop-shop for all their vacation needs, 
-                  offering seamless bookings accross all four categories.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                <h3>{{section.title}}</h3>
+                {{section.description|safe}}
               </div>
             </div>
-            <div class="col col-md-6 d-flex justify-content-center align-items-center">
-              <img src="{% static 'img/guest_perks_screen.png' %}">
+            <div class="col col-md-6 d-flex justify-content-center align-items-center
+            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">  
+              {% if section.image %}
+              <img src="{{ section.image.url }}" alt="{{ section.title }}">
+              {% endif %}
             </div>
           </section>
+          {% endfor %}
 
         </section>
       </div>
     </div>
     
+    {% if feedbacks %}
     <section class="reviews mx-auto my-5 container">
       <h3 class="mb-4 text-center">What they say about us</h3>
       <div class="row">
 
+        {% for feedback in feedbacks %}
         <div class="col col-md-4 p-3">
           <div class="review-box p-4">
             <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
+              <img src="{{ feedback.profile_image.url }}" alt="{{ feedback.username }}">
+              <h5>{{ feedback.username }}</h5>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+            <p>{{ feedback.feedback }}</p>
           </div>
         </div>
-
-        <div class="col col-md-4 p-3">
-          <div class="review-box p-4">
-            <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-          </div>
-        </div>
-        
-        <div class="col col-md-4 p-3">
-          <div class="review-box p-4">
-            <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-          </div>
-        </div>
-        
-        <div class="col col-md-4 p-3">
-          <div class="review-box p-4">
-            <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-          </div>
-        </div>
-
-        <div class="col col-md-4 p-3">
-          <div class="review-box p-4">
-            <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-          </div>
-        </div>
-        
-        <div class="col col-md-4 p-3">
-          <div class="review-box p-4">
-            <div class="profile">
-              <img src="https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133624.jpg">
-              <h5>Angelina Simple</h5>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-          </div>
-        </div>      
+        {% endfor %}      
 
       </div>
     </section>
+    {% endif %}
     
     <script>
       window.addEventListener('scroll', function() {
@@ -412,6 +369,8 @@
         document.getElementById('guestToggle').setAttribute('active', 'false');
         document.getElementById('hostToggle').setAttribute('active', 'true');
       }
+
+      $('video').autoplay = true;
     </script>
 
 {% endblock %}

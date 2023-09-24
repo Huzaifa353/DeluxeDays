@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.http import HttpResponse
-from .models import Blog, HomeContent, Stat, GuestSectionContent
+from .models import Blog, HomeContent, Stat, GuestSectionContent, HostSectionContent, GuestSectionSlider, HostSectionSlider, Feedback, TeamMember, AboutSectionContent
 
 # Create your views here.
 
@@ -17,7 +17,13 @@ def index(request):
         'hosts': Stat.objects.get(key='Verified Hosts').value,
         's1Title': HomeContent.objects.get(key='Section 1 Title').value,
         's1Description': HomeContent.objects.get(key='Section 1 Description').value,
-        'guestSections': GuestSectionContent.objects.all()
+        'guestSections': GuestSectionContent.objects.all(),
+        'hostSections': HostSectionContent.objects.all(),
+        'guestSliders': GuestSectionSlider.objects.all(),
+        'guestSliderTitle': HomeContent.objects.get(key="Guest Slider Title").value,
+        'hostSliders': HostSectionSlider.objects.all(),
+        'hostSliderTitle': HomeContent.objects.get(key="Host Slider Title").value,
+        'feedbacks': Feedback.objects.all(),
     }
     return render(request, 'index.html', context)
 
@@ -27,7 +33,11 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    context = {
+        'aboutSections': AboutSectionContent.objects.all(),
+        'teamMembers': TeamMember.objects.all()
+    }
+    return render(request, 'about.html', context)
 
 
 def blog(request):

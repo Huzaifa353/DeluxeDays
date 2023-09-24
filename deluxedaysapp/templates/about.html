@@ -8,35 +8,25 @@
 
     {% include 'header.html' with title='About Us' %}
 
-    <section class="info mx-auto container row justify-content-between">
-        <div class="col col-md-6 d-flex justify-content-center flex-column">
-            <div class="mb-md-4 text-center text-md-left">
-                <h3>Our Mission</h3>
-                <p> Our Mission at Deluxe Days is to create positive social and environmental
-                    impact through our business operations. We are committed to addressing
-                    societal challenges and promoting sustainable solutions in which you can become host and
-                    earn, while generating economic values for our stakeholders .</p>
+    {% if aboutSections %}
+        {% for section in aboutSections %}
+        <section class="info mx-auto container row justify-content-between">
+            <div class="col col-md-6 d-flex justify-content-center flex-column
+            {% if forloop.counter|divisibleby:2 %} order-1 order-md-2 {% endif %}">
+                <div class="mb-md-4 text-center text-md-left">
+                    <h3>{{ section.title }}</h3>
+                    {{ section.description|safe }}
+                </div>
             </div>
-        </div>
-        <div class="col col-md-6 d-flex justify-content-center align-items-center">
-            <img src="{% static '/img/image.png' %}" class="aboutus_img">
-        </div>
-    </section>
-
-    <section class="info mx-auto container row justify-content-between responsiveness">
-        <div class="col col-md-6 d-flex justify-content-center align-items-center">
-            <img src="{% static '/img/image1.png' %}" class="aboutus_img">
-        </div>
-        <div class="col col-md-6 d-flex justify-content-center flex-column">
-            <div class="mb-md-4 text-center text-md-left">
-                <h3 class="mt-4">Our Vision</h3>
-                <p> Our Vision is to be leading social enterprise company that transforms
-                    communities and protects the environment through sustainable and innovative
-                    business practices. We strive to inspire others to join us in creating a more
-                    equitable and sustainable world.</p>    
+            <div class="col col-md-6 d-flex justify-content-center align-items-center
+            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">
+            {% if section.image %}
+                <img src="{{ section.image.url }}" alt="{{ section.title }}" class="aboutus_img">
+            {% endif %}
             </div>
-        </div>
-    </section>
+        </section>
+        {% endfor %}
+    {% endif %}
 
     <div class="container my-4">
         <div class="customers py-4 px-5">
@@ -178,70 +168,23 @@
         </div>
     </div>
 
+    {% if teamMembers %}
     <div class="members mt-5">
         <div class="container">
             <h3>Team Members</h3>
-            <div class="row mt-5">
-                <div class="col-md-3">
-                    <img src="{% static '/img/Jacob Robbert.png' %}">
+            <div class="row">
+                {% for member in teamMembers %}
+                <div class="col-md-4 p-5">
+                    <img src="{{member.profile_image.url}}" alt="{{ member.name }}">
                     <h5>
-                        Jacob Robbert
+                        {{member.name}}
                     </h5>
-                    <p>Travel Cordinator</p>
+                    <p>{{member.designation}}</p>
                 </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Mike Robbert.png' %}">
-                    <h5>
-                        Mike Robbert
-                    </h5>
-                    <p>Customer Support</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Mike Robert.png' %}">
-                    <h5>
-                        Mike Robbert
-                    </h5>
-                    <p>Customer Support</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Maria Williams.png' %}">
-                    <h5>
-                        Maria Williams
-                    </h5>
-                    <p>Event Manager</p>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-3">
-                    <img src="{% static '/img/Marry Henry.png' %}">
-                    <h5>
-                        Marry Henry
-                    </h5>
-                    <p>Travel Cordinator</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Sussy Wahya.png' %}">
-                    <h5>
-                        Sussy Wahiya
-                    </h5>
-                    <p>Customer Support</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Susy Wahya.png' %}">
-                    <h5>
-                        Sussy Wahiya
-                    </h5>
-                    <p>Customer Support</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{% static '/img/Blake Robbert.png' %}">
-                    <h5>
-                        Blake Robbert
-                    </h5>
-                    <p>Event Manager</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+    {% endif %}
 
 {% endblock %}

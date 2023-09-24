@@ -44,3 +44,79 @@ class GuestSectionContent(models.Model):
     class Meta:
         verbose_name = "Guest Section"
         verbose_name_plural = "Guest Section"
+
+class HostSectionContent(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.ImageField(upload_to='site_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "Host Section"
+        verbose_name_plural = "Host Section"
+
+
+class GuestSectionSlider(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.ImageField(upload_to='site_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "Guest Slider"
+        verbose_name_plural = "Guest Slider"
+
+
+class HostSectionSlider(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.ImageField(upload_to='site_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "Host Slider"
+        verbose_name_plural = "Host Slider"
+
+class Feedback(models.Model):
+    username = models.CharField(max_length=300)
+    feedback = models.TextField()
+    profile_image = models.ImageField(upload_to='profile-pictures/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.feedback
+
+    class Meta:
+        verbose_name = "Feedback"
+        verbose_name_plural = "Feedbacks"
+
+        
+class TeamMember(models.Model):
+    name = models.CharField(max_length=300)
+    designation = models.CharField(max_length=300)
+    profile_image = models.ImageField(upload_to='profile-pictures', blank=True, null=True)
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Team Member"
+        verbose_name_plural = "Team Members"
+
+class AboutSectionContent(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField()
+    image = models.ImageField(upload_to='site_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = "About Section"
+        verbose_name_plural = "About Section"

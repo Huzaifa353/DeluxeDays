@@ -405,6 +405,12 @@ header .navbar-dark .navbar-toggler {
   line-height: 2rem;
   font-weight: 500;
 }
+.main-video iframe {
+  width: 80vw;
+  height: 40vw;
+  margin: 0 auto;
+  display: block;
+}
 
 .contact-short {
   text-align: center;
@@ -709,26 +715,26 @@ header .navbar-dark .navbar-toggler {
   transition: all .3s ease;
 }
 
-.host .carousel-container {
+.slider-section .carousel-container {
   width: 400px;
   height: 300px;
   overflow: hidden;
   position: relative;
 }
 
-.host .carousel-slide {
+.slider-section .carousel-slide {
   display: flex;
   width: 100%;
   height: 100%;
 }
 
-.host .carousel-slide img {
+.slider-section .carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.host .carousel-button {
+.slider-section .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -738,29 +744,29 @@ header .navbar-dark .navbar-toggler {
   cursor: pointer;
 }
 
-.host .carousel-button-prev {
+.slider-section .carousel-button-prev {
   left: 10px;
 }
 
-.host .carousel-button-next {
+.slider-section .carousel-button-next {
   right: 10px;
 }
 
-.host .become-host {
+.slider-section {
   background-color: #102028;
   border-radius: 33px;
   position: relative;
   overflow: hidden;
 }
 
-.host .become-host img {
+.slider-section img {
   width: 100%;
-  max-width: 300px;
+  max-width: 253px;
   padding-top: 21px;
   padding-bottom: 53px;
 }
 
-.host .become-host .step {
+.slider-section .step {
   width: calc(100% - 30%);
   margin: 0 auto;
   margin-bottom: 21px;
@@ -770,39 +776,39 @@ header .navbar-dark .navbar-toggler {
   z-index: 5;
 }
 
-.host .become-host h2 {
+.slider-section h2 {
   color: #fffd;
   margin: 21px auto;
   text-align: center;
   padding: 0 10px;
 }
-.host .become-host .step h4 {
+.slider-section .step h4 {
   color: #fffc;
   margin-bottom: 33px;
 }
-.host .become-host .step h3 {
+.slider-section .step h3 {
   color: #fffe;
 }
 
-.host .become-host .step p {
+.slider-section .step p {
   color: #fffe;
 }
 
-.host .become-host .design-circles>div {
+.slider-section .design-circles>div {
   border-radius: 50%;
   border: 4px solid #fff3;
   position: absolute;
   z-index: 0;
 }
 
-.host .become-host .design-circles .circle-1 {
+.slider-section .design-circles .circle-1 {
   width: 72px;
   height: 72px;
   top: 3px;
   left: 53px;
 }
 
-.host .become-host .design-circles .circle-2 {
+.slider-section .design-circles .circle-2 {
   width: 53px;
   height: 53px;
   bottom: 3px;
@@ -1041,18 +1047,20 @@ header .navbar-dark .navbar-toggler {
 .members h5 {
   margin-top: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
 .members p {
-  color: rgba(75, 191, 240, 1);
+  color: rgb(0, 141, 201);
+  font-weight: 600;
 }
 
 .members img {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
+  height: 250px;
+  width: 100%;
+  border-radius: 21px;
+  object-fit: cover;
 }
 
 .info .aboutus_img {
@@ -1164,7 +1172,7 @@ header .navbar-dark .navbar-toggler {
   .guest section, .host section {
     margin: 2rem 0;
   }
-  .host .become-host .design-circles .circle-1 {
+  .slider-section .design-circles .circle-1 {
     left: -21px;
   }
   .host .host-collaboration .box {
