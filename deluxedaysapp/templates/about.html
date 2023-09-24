@@ -28,75 +28,20 @@
         {% endfor %}
     {% endif %}
 
-    <div class="container my-4">
-        <div class="customers py-4 px-5">
-            <h1>Thankyou Board</h1>
-            <p>Reviews from Our Valuable Investors and Strategic Partners</p>
-            <div class="slide mt-4 mb-2">
-                <img src="{% static '/img/image2.png' %}" style="height:100px;width:100px;">
-                <div>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-                <p>Courtney Henry</p>
-                <p>
-                    “I wanted to take a moment to express my sincere gratitude for your Contribution .
-                    Your hard work , dedication , and expertise have made a significant impact.”
-                </p>
-            </div>
-        </div>
-    </div>
-
     <div class="features text-center mt-4">
         <div class="container my-5 py-4">
             <h4>Why Choose Us?</h4>
             <p class="mb-4">These popular destinations have a lot to offer</p>
             <div class="row">
+                {% for feature in features %}
                 <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/airplane-mode-on.png" alt="airplane-mode-on"/>
+                    <img width="120" height="120" src="{{feature.image.url}}" alt="{{feature.title}}"/>
                     <h5>
-                        Travel
+                        {{feature.title}}
                     </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    <p>{{feature.description}}</p>
                 </div>
-                <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/city-buildings.png" alt="city-buildings"/>
-                    <h5>
-                        City Tour
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                </div>
-                <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/crowd.png" alt="crowd"/>
-                    <h5>
-                        Social Community
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                </div>
-                <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/ok.png" alt="ok"/>
-                    <h5>
-                        Best price guarantee
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                </div>
-                <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/tear-off-calendar.png" alt="tear-off-calendar"/>
-                    <h5>
-                        Easy Booking
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                </div>
-                <div class="col-md-4 my-4 px-4">
-                    <img width="120" height="120" src="https://img.icons8.com/cute-clipart/128/headset.png" alt="headset"/>
-                    <h5>
-                        Customer Service 24h
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -109,31 +54,33 @@
                 <div class="col col-12 col-lg-6 col-md-9">
                     <div class="form-container">
                         <h2>Get in Touch with Us</h2>
-                        <form>
+                        <form action="{% url 'sendMessage' %}" method="POST">
+                            {% csrf_token %}
                             <div class="row mt-3">
                                 <div class="form-group col-md-6">
-                                    <label for="name">First Name</label>
-                                    <input type="text" class="form-control mt-1" id="name"
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" class="form-control mt-1" id="firstname" name="firstname"
                                         placeholder="Enter your name">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="name">LastName</label>
-                                    <input type="text" class="form-control mt-1" id="name"
+                                    <label for="lastname">LastName</label>
+                                    <input type="text" class="form-control mt-1" id="lastname" name="lastname"
                                         placeholder="Enter your name">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <label for="email">Email address</label>
-                                <input type="email" class="form-control mt-1" id="email" placeholder="Enter your email">
+                                <input type="email" class="form-control mt-1" id="email" 
+                                name="email" placeholder="Enter your email">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="phone">Phone Number</label>
                                 <input type="tel" class="form-control mt-1" id="phone" name="phone"
-                                    placeholder="Input your Phone Number in Here" pattern="[0-9]{3}-[0-9]">
+                                    placeholder="Input your Phone Number in Here">
                             </div>
                             <div class="form-group mt-3">
                                 <label for="message">Message</label>
-                                <textarea class="form-control mt-1" id="message" rows="5"
+                                <textarea class="form-control mt-1" id="message" rows="5" name="message"
                                     placeholder="Write a message"></textarea>
                             </div>
                             <div class="form-group mt-3">
@@ -147,23 +94,20 @@
     </div>
 
     <div class="black-strip my-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-2 text-center">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+                <a href="{{facebookLink.url}}" target="_blank" class="social-link col-2 text-center">
                     <i class="fa fa-facebook"></i>
-                </div>
-                <div class="col-2 text-center">
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <div class="col-2 text-center">
+                </a>
+                <a href="{{instagramLink.url}}" target="_blank" class="social-link col-2 text-center">
                     <i class="fa fa-instagram"></i>
-                </div>
-                <div class="col-2 text-center">
+                </a>
+                <a href="{{tiktokLink.url}}" target="_blank" class="social-link col-2 text-center">
+                    <i class="tiktok-icon"></i>
+                </a>
+                <a href="{{linkedInLink.url}}" target="_blank" class="social-link col-2 text-center">
                     <i class="fa fa-linkedin"></i>
-                </div>
-                <div class="col-2 text-center">
-                    <i class="fa fa-linkedin"></i>
-                </div>
+                </a>
             </div>
         </div>
     </div>

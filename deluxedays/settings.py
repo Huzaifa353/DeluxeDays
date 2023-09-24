@@ -148,3 +148,13 @@ TINYMCE_DEFAULT_CONFIG = {
         bullist numlist outdent indent | removeformat | help
     ''',
 }
+
+# EMAIL CONFIG
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_FROM_USER = 'support@deluxedays.online'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'support@deluxedays.online'
+EMAIL_HOST_PASSWORD = 'qalyqqhokqiwctvz'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

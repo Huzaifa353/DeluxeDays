@@ -405,11 +405,22 @@ header .navbar-dark .navbar-toggler {
   line-height: 2rem;
   font-weight: 500;
 }
+
+.main-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  position: relative;
+}
 .main-video iframe {
-  width: 80vw;
-  height: 40vw;
-  margin: 0 auto;
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .contact-short {
@@ -911,7 +922,6 @@ header .navbar-dark .navbar-toggler {
 
 .black-strip {
   background-color: #11232B;
-  padding: 10px 0;
   color: #fff;
   height: 150px;
   display: flex;
@@ -919,10 +929,30 @@ header .navbar-dark .navbar-toggler {
   justify-content: center;
 }
 
-.black-strip i {
+.black-strip .social-link {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s background-color ease;
+  cursor: pointer;
+  margin: 0 21px;
+}
+.black-strip .social-link:hover {
+  background-color: #1f3743;
+}
+
+.black-strip .social-link i {
   font-size: 24px;
   color: #fff;
-  margin: 10px 10px;
+}
+.black-strip .social-link i.tiktok-icon {
+  height: 24px; 
+  width: 24px;
+  background-image: url('../img/tiktok-icon.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .features h4 {

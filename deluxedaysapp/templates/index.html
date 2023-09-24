@@ -58,20 +58,14 @@
       </div>
     </div>
 
-    <section class="about-short container mx-auto row">
-      <div class="images col-md-6">
-        <div class="img1"></div>
-        <div class="img2"></div>
-        <div class="img3"></div>
-      </div>
-      <div class="text col-md-6">
+    <section class="about-short container mx-auto">
+      <div class="text text-center">
         {{ s1Title|safe }}
         {{ s1Description|safe }}
       </div>
-    </section>
-
-    <section class="main-video">
-      <iframe src="https://www.youtube.com/embed/7PAwqItlUzI?cc_load_policy=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+      <div class="main-video">
+        <iframe src="https://www.youtube.com/embed/7PAwqItlUzI?cc_load_policy=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
+      </div>
     </section>
     
     <section class="contact-short container-fluid row">
@@ -327,7 +321,6 @@
             var currentValue = parseInt(counter.textContent);
 
             difference = targetValue - currentValue;
-            console.log(difference);
 
             if (0 <= difference < 10)
                 difference = 1;

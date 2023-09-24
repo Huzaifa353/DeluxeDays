@@ -1,6 +1,10 @@
-from django.shortcuts import render,redirect,HttpResponse
-from django.http import HttpResponse
-from .models import Blog, HomeContent, Stat, GuestSectionContent, HostSectionContent, GuestSectionSlider, HostSectionSlider, Feedback, TeamMember, AboutSectionContent
+from django.shortcuts import render,redirect
+from .models import Blog, HomeContent, Stat, \
+    GuestSectionContent, HostSectionContent, \
+    GuestSectionSlider, HostSectionSlider, Feedback, \
+    AboutSectionContent, TeamMember, SocialLink, Message, AboutWhyChooseUs, \
+    ContactContent, CompanyInformation
+from .email import send_message_notification_to_company
 
 # Create your views here.
 
@@ -29,13 +33,26 @@ def index(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+
+    context = {
+        'content': ContactContent.objects.get(key='Contact Content').value,
+        'whatsapp': CompanyInformation.objects.get(key="Whatsapp Number").value,
+        'email': CompanyInformation.objects.get(key="Email").value,
+        'map': CompanyInformation.objects.get(key="Map").value,
+        'address': CompanyInformation.objects.get(key="Address").value
+    }
+    return render(request, 'contact.html', context)
 
 
 def about(request):
     context = {
         'aboutSections': AboutSectionContent.objects.all(),
-        'teamMembers': TeamMember.objects.all()
+        'teamMembers': TeamMember.objects.all(),
+        'facebookLink': SocialLink.objects.get(social_name="Facebook"),
+        'instagramLink': SocialLink.objects.get(social_name="Instagram"),
+        'tiktokLink': SocialLink.objects.get(social_name="Tiktok"),
+        'LinkedInLink': SocialLink.objects.get(social_name="LinkedIn"),
+        'features': AboutWhyChooseUs.objects.all()
     }
     return render(request, 'about.html', context)
 
@@ -47,3 +64,18 @@ def blog(request):
         'blogs': blogs
     }
     return render(request, 'blog.html', context)
+
+def sendMessage(request):
+
+    firstname = request.POST.get('firstname')
+    lastname = request.POST.get('lastname')
+    email = request.POST.get('email')
+    phone = request.POST.get('phone')
+    message = request.POST.get('message')
+
+    message = Message(firstname=firstname, lastname=lastname, email=email, phone_number=phone, message=message)
+    message.save()
+
+    send_message_notification_to_company(message)
+
+    return redirect('about')
