@@ -1236,11 +1236,7 @@ header .navbar-dark .navbar-toggler {
     color: #c9ecff !important;
     font-weight: 700;
     margin-top: 5px !important;
-    border-bottom: 2px solid #c9ecff;
-    border-end-start-radius: 1px;
-    border-end-end-radius: 1px;
 }
 .developer-link:hover {
     color: white !important;
-    border-color: white !important;
 }
