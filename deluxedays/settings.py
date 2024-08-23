@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!k&_3(z39io#3)wg=$-rt0vxo&&9uy(ap(!*4t*zq4e868g=c#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['huzaifa53.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.deluxedays.online']
 
 
 # Application definition
@@ -151,7 +151,7 @@ TINYMCE_DEFAULT_CONFIG = {
 
 # EMAIL CONFIG
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FROM_USER = 'support@deluxedays.online'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'support@deluxedays.online'

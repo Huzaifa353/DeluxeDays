@@ -9,14 +9,14 @@
     <header role="banner">
       {% include 'navbar.html' %}
       <div class="container">
-        
+
         <div class="main row">
             <div class="text col-md-7">
               {{ title|safe }}
               {{ description|safe }}
               <div class="row">
-                <a href="" class="playstore"></a>
-                <a href="" class="appstore"></a>
+                <a href="https://apps.apple.com/dk/app/deluxe-days/id6460978270" class="appstore"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.deluxe.days&pcampaignid=web_share" class="playstore"></a>
               </div>
             </div>
             <div class="col-md-5 d-none d-md-flex align-items-center">
@@ -67,13 +67,13 @@
         <iframe src="https://www.youtube.com/embed/7PAwqItlUzI?cc_load_policy=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; web-share" allowfullscreen></iframe>
       </div>
     </section>
-    
+
     <section class="contact-short container-fluid row">
       <h2>Booking your journey has never be easier</h2>
       <p>Deluxe Days offers an easy and seamless way to plan and book your dream vacation. We have everything you need to create unforgettable memories.</p>
       <button>Contact Us Now</button>
     </section>
-    
+
     <div class="tabs container row mx-auto my-5 text-center justify-content-center">
       <div class="col-6 col-md-4 px-0">
         <h4 id="guestToggle" class="tab" onclick="switchToGuest()" active="false">Guest</h4>
@@ -125,7 +125,7 @@
               <div id="guestSlides" class="carousel slide">
                 <ol class="carousel-indicators">
                   {% for slider in guestSliders %}
-                  <li data-target="#guestSlides" data-slide-to="{{ forloop.counter0 }}" 
+                  <li data-target="#guestSlides" data-slide-to="{{ forloop.counter0 }}"
                   {% if forloop.counter0 == 0 %} class="active" {% endif %}></li>
                   {% endfor %}
                 </ol>
@@ -156,16 +156,16 @@
                   <div class="circle-2"></div>
                 </div>
               </div>
-            
+
               <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>            
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
             </section>
           {% endif %}
 
           {% for section in guestSections %}
           <section class="info mx-auto container row px-0">
-            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column 
+            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column
             {% if forloop.counter|divisibleby:2 %} order-1 order-md-2 {% endif %}">
               <div class="mb-md-5 text-center text-md-left">
                 <h3>{{section.title}}</h3>
@@ -173,7 +173,7 @@
               </div>
             </div>
             <div class="col col-md-6 d-flex justify-content-center align-items-center
-            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">  
+            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">
               {% if section.image %}
               <img src="{{ section.image.url }}" alt="{{ section.title }}">
               {% endif %}
@@ -182,7 +182,7 @@
           {% endfor %}
 
         </section>
-        
+
         <section class="host container justify-content-center">
 
           {% if hostSliders %}
@@ -191,7 +191,7 @@
               <div id="hostSlides" class="carousel slide">
                 <ol class="carousel-indicators">
                   {% for slider in hostSliders %}
-                  <li data-target="#hostSlides" data-slide-to="{{ forloop.counter0 }}" 
+                  <li data-target="#hostSlides" data-slide-to="{{ forloop.counter0 }}"
                   {% if forloop.counter0 == 0 %} class="active" {% endif %}></li>
                   {% endfor %}
                 </ol>
@@ -222,10 +222,10 @@
                   <div class="circle-2"></div>
                 </div>
               </div>
-            
+
               <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>            
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
             </section>
           {% endif %}
 
@@ -258,10 +258,10 @@
 
             </div>
           </section>
-          
+
           {% for section in hostSections %}
           <section class="info mx-auto container row px-0">
-            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column 
+            <div class="col col-md-6 p-4 d-flex justify-content-center flex-column
             {% if forloop.counter|divisibleby:2 %} order-1 order-md-2 {% endif %}">
               <div class="mb-md-5 text-center text-md-left">
                 <h3>{{section.title}}</h3>
@@ -269,7 +269,7 @@
               </div>
             </div>
             <div class="col col-md-6 d-flex justify-content-center align-items-center
-            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">  
+            {% if forloop.counter|divisibleby:2 %} order-2 order-md-1 {% endif %}">
               {% if section.image %}
               <img src="{{ section.image.url }}" alt="{{ section.title }}">
               {% endif %}
@@ -280,7 +280,7 @@
         </section>
       </div>
     </div>
-    
+
     {% if feedbacks %}
     <section class="reviews mx-auto my-5 container">
       <h3 class="mb-4 text-center">What they say about us</h3>
@@ -296,12 +296,12 @@
             <p>{{ feedback.feedback }}</p>
           </div>
         </div>
-        {% endfor %}      
+        {% endfor %}
 
       </div>
     </section>
     {% endif %}
-    
+
     <script>
       window.addEventListener('scroll', function() {
         var counterElements = document.getElementsByClassName('count');
@@ -341,7 +341,7 @@
         });
       }
       });
-      
+
       switchToGuest();
 
       function switchToGuest()
@@ -351,14 +351,14 @@
         tabContent.style.height = document.getElementsByClassName('guest')[0].offsetHeight + 'px';
         document.getElementById('hostToggle').setAttribute('active', 'false');
         document.getElementById('guestToggle').setAttribute('active', 'true');
-        
+
       }
       function switchToHost()
       {
         var tabContent = document.getElementById('tabContent');
         tabContent.classList.add('host-view');
         tabContent.style.height = document.getElementsByClassName('host')[0].offsetHeight + 'px';
-        
+
         document.getElementById('guestToggle').setAttribute('active', 'false');
         document.getElementById('hostToggle').setAttribute('active', 'true');
       }
